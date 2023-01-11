@@ -1,0 +1,28 @@
+table {
+  width: 100%;
+  max-width: 650px;
+  box-shadow: 0 0 0 1px black;
+  border-collapse: collapse;
+  border-radius: 10px;
+  line-height: 32px;
+  overflow: hidden;
+}
+td {
+  padding: 10px 15px;
+}
+
+tr {
+  background-color: var(--clr_white);
+}
+
+tr:nth-child(odd){
+  background-color: #faecb6;
+}
+
+section > article > :first-child {
+  width: 80%;
+}
+
+section > article > :last-child {
+  width: 180px;
+}

@@ -1,0 +1,45 @@
+#intro > :first-child {
+  width: 70%;
+}
+
+#intro > :last-child {
+  width: clamp(160px ,30%, 340px);
+}
+
+.blue-bar > article {
+  display: inline;
+}
+
+#talenten > .split {
+  font-size: var(--fnt_size_paragraph_text);
+  max-width: 75ch;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  column-gap: var(--spc_large);
+}
+
+#talenten > .split > :not(img) {
+  grid-column: 1;
+}
+
+#talenten > .split > img {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  height: 187px;
+}
+
+#opleidingen > :first-child {
+  width: clamp(140px, 30%, 220px);
+}
+
+@media screen and (max-width: 550px) {
+  #talenten > .split {
+    grid-template-columns: auto;
+  }
+
+  #talenten > .split > img {
+    grid-column: 1;
+    grid-row: 3;
+    justify-self: center;
+  }
+}

@@ -1,0 +1,137 @@
+#boxed-container {
+    grid-template-columns: 1fr 1.5fr;
+    gap: var(--spc_regular);
+}
+
+#boxed-container > *:last-child {
+    display: flex;
+    align-items: center;
+    margin-inline-start: calc(var(--spc_large) * -1);
+    grid-column: span 2;
+}
+
+#boxed-container > :last-child > img {
+    margin-right: var(--spc_regular);
+    border-radius: 50%;
+    box-shadow: var(--shd_strong);
+}
+
+.two-columns {
+    margin-block-end: var(--spc_regular);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spc_regular);
+}
+
+.first.two-columns {
+    grid-template-columns: 1fr 1fr;
+}
+
+.first.two-columns > p {
+    font-style: italic;
+    margin-block-end: 0;
+}
+
+.weegschaal-container {
+    display: flex;
+    flex-direction: column;
+    height: 110%;
+}
+
+.weegschaal {
+    height: 100%;
+    box-sizing: border-box;
+    background-color: var(--clr_extra_white);
+    background-image: url("/resources/weegschaal.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    border-radius: 10px;
+    border: 10px solid var(--clr_extra_white);
+    filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.1));
+}
+
+.bron {
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    top: calc(var(--spc_small) * 0.75);
+    font-size: calc(var(--fnt_size_paragraph_text) * 0.6);
+}
+
+#img-ginkgo-1-container {
+    position: relative;
+    flex: 1 0.5 40%;
+    max-width: 280px; /* to max the height of the image inside */
+}
+
+#img-ginkgo-1 {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5)); /* --shd_regular w/o spread */
+}
+
+#img-ginkgo-2 {
+    position: absolute;
+    max-width: 440px;
+    height: min(120%, 310px);
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    border-radius: 10%;
+    box-shadow: var(--shd_regular);
+} 
+
+img[src="/resources/headshot.png"] {
+    width: 120px;
+}
+
+@media screen and (max-width: 1150px) {
+    #boxed-container {
+        grid-template-columns: auto;
+    }
+
+    #boxed-container > *:last-child {
+        grid-column: span 1;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+
+}
+
+@media screen and (max-width: 800px) {
+    #img-ginkgo-1-container {
+        display: none;
+    }
+
+    #img-ginkgo-2 {
+        display: none;
+    }
+
+    .two-columns {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .weegschaal-container {
+        height: 150px;
+    }
+
+    img[src="/resources/weegschaal.svg"] {
+        height: 80px;
+    }
+
+    #boxed-container>*:last-child {
+        align-items: start;
+    }
+
+    #boxed-container > :last-child > img {
+        width: 60px;
+        align-items: flex-start;
+    }
+}
+
+
+

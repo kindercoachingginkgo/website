@@ -1,0 +1,7 @@
+section > article {
+  justify-content: space-between;
+}
+
+section > article > :last-child {
+  width: clamp(140px, 20%, 500px);
+}

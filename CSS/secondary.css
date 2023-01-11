@@ -1,0 +1,33 @@
+section > article {
+    display: flex;
+    gap: var(--spc_large) !important;
+}
+
+section > article img {
+    margin-block: auto;
+    border-radius: var(--spc_smallest);
+    box-shadow: var(--shd_strong);
+}
+/* 
+img[src="/resources/potloden.jpeg"], img[src="/resources/spellen.jpeg"] {
+    transform: rotate(4deg);
+} */
+
+section > article ul {
+    margin-inline-start: 2ch;
+}
+
+@media screen and (max-width: 700px) {
+    section > article {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    section > article > *:not(img) {
+        width: auto !important;
+    }
+
+    section > article > img {
+        transform: none !important;
+    }
+}
