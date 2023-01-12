@@ -62,7 +62,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   background-color: var(--clr_white);
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body > * {
@@ -444,7 +444,6 @@ footer > article li {
   /* footer */
   footer > article {
     display: grid;
-    grid-template-columns: min-content auto;
     gap: var(--spc_small);
   }
 
