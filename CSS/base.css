@@ -43,13 +43,14 @@
 
 /* general */
 html {
-  width: 100vw;
+  max-width: 100%;
   overflow-x: hidden;
 }
 
 html * {
   margin: 0;
   padding: 0;
+  max-width: 100%;
   font-family: "Raleway", sans-serif;
   scroll-behavior: smooth;
 }
@@ -61,6 +62,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   background-color: var(--clr_white);
+  overflow-x: hidden;
 }
 
 body > * {
