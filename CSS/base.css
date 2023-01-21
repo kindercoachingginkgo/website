@@ -191,6 +191,7 @@ nav > ul {
 
 nav li {
   margin: calc(var(--spc_small) * 1.5);
+  white-space: nowrap;
 }
 
 #active {
@@ -204,9 +205,10 @@ nav li {
 
 nav a {
   font-weight: var(--fnt_weight_medium);
-  text-decoration: underline solid transparent;
+  text-decoration: none; /* if browser does not support transparent underline; */
+  text-decoration: underline solid rgba(0, 0, 0, 0);
   color: var(--clr_black);
-  transition: 500ms;
+  /* transition: 500ms; */
 }
 
 nav a:hover {
