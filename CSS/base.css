@@ -56,13 +56,12 @@ html * {
 }
 
 body {
-  --content-container-margin: min(80px, 10%);
+  --content-container-margin: min(80px, 10vw);
   padding-inline: var(--content-container-margin);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   background-color: var(--clr_white);
-  overflow-x: clip;
 }
 
 body > * {
@@ -274,8 +273,10 @@ footer::before {
   content: "";
   display: block;
   position: absolute;
-  margin-inline: -50vw;
-  inset: 0;
+  top: 0;
+  bottom: 0;
+  right: calc(max(calc((100vw - 1180px) / 2), min(80px, 10vw)) * -1);
+  width: 100vw;
   z-index: -1;
   background-color: var(--clr_blue);
 }
@@ -379,8 +380,10 @@ footer > article li {
     border-bottom: var(--spc_regular_border) solid black;
     display: block;
     position: absolute;
-    margin-inline: -50vw;
-    inset: 0;
+    top: 0;
+    bottom: 0;
+    right: calc(max(calc((100vw - 1180px) / 2), min(80px, 10vw)) * -1);
+    width: 100vw;
     z-index: -1;
   }
 
