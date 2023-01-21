@@ -208,7 +208,7 @@ nav a {
   text-decoration: none; /* if browser does not support transparent underline; */
   text-decoration: underline solid rgba(0, 0, 0, 0);
   color: var(--clr_black);
-  /* transition: 500ms; */
+  transition: 500ms;
 }
 
 nav a:hover {
