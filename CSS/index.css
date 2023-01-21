@@ -3,10 +3,11 @@
     gap: var(--spc_regular);
 }
 
-#boxed-container > *:last-child {
+#boxed-container > :last-child {
+    margin-inline-start: calc(var(--spc_large) * -1);
+    max-width: revert;
     display: flex;
     align-items: center;
-    margin-inline-start: calc(var(--spc_large) * -1);
     grid-column: span 2;
 }
 
