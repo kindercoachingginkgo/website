@@ -8,10 +8,6 @@ section > article img {
     border-radius: var(--spc_smallest);
     box-shadow: var(--shd_strong);
 }
-/* 
-img[src="/resources/potloden.jpeg"], img[src="/resources/spellen.jpeg"] {
-    transform: rotate(4deg);
-} */
 
 section > article ul {
     margin-inline-start: 2ch;

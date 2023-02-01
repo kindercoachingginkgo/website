@@ -341,6 +341,20 @@ footer > article li {
   margin-block: calc(var(--spc_smallest) / 2);
 }
 
+footer > article ul > li > a:hover {
+  color: var(--clr_yellow);
+}
+
+footer > article ul > li > a::after {
+  content: ">";
+  display: inline-block;
+  margin-inline-start: 1ch;
+}
+
+footer > article ul > li > a:hover::after {
+  transform: scale(1.5);
+}
+
 /* LAYOUT ADJUSTMENTS */
 
 /* Enlarge font-size for for large screen */
