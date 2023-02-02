@@ -25,4 +25,27 @@ section > article > :first-child {
 
 section > article > :last-child {
   width: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spc_small);
+}
+
+section > article > :last-child > * {
+  margin: 0;
+}
+
+section > article > :last-child > img {
+  margin-block: 0;
+  width: min(100%, 230px);
+}
+
+section > article > :last-child > q {
+  display: inline;
+  text-align: center;
+}
+
+.bron {
+  font-size: small;
 }
