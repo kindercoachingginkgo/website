@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://kindercoachingginkgo.nl/</loc>
+        <lastmod>2023-02-01</lastmod>
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>https://kindercoachingginkgo.nl/HTML/over-mij.html</loc>
+        <lastmod>2023-02-01</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://kindercoachingginkgo.nl/HTML/werkwijze.html</loc>
+        <lastmod>2023-02-01</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://kindercoachingginkgo.nl/HTML/tarieven.html</loc>
+        <lastmod>2023-02-01</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://kindercoachingginkgo.nl/HTML/contact.html</loc>
+        <lastmod>2023-02-01</lastmod>
+        <priority>0.80</priority>
+    </url>
+</urlset>

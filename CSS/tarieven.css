@@ -29,6 +29,11 @@ section > article > :last-child {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: var(--spc_small);
+}
+
+section > article > :last-child > * {
+  margin: 0;
 }
 
 section > article > :last-child > img {
@@ -37,7 +42,10 @@ section > article > :last-child > img {
 }
 
 section > article > :last-child > q {
-  margin-block-start: var(--spc_small);
   display: inline;
   text-align: center;
+}
+
+.bron {
+  font-size: small;
 }
