@@ -61,7 +61,7 @@
 }
 
 .experience--expanded .experience__content {
-    --max-line-count: 12;
+    --max-line-count: 20;
 }
 
 .experience__content::before {
