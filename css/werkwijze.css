@@ -1,0 +1,34 @@
+#intro> :first-child {
+    width: 80%;
+}
+
+#intro> :last-child {
+    width: clamp(140px, 30%, 220px);
+}
+
+#begeleidingsvormen> :first-child {
+    width: clamp(200px, 35%, 500px);
+}
+
+.visual-section--misc-info > article {
+    display: grid; 
+    grid-template-columns: auto clamp(140px, 25%, 300px);
+    grid-template-rows: auto auto;
+    gap: var(--spc_regular) var(--spc_large) !important;
+}
+
+.visual-section--misc-info .experiences {
+    grid-column: 1 / -1;
+}
+
+
+@media screen and (max-width: 600px) {
+    .visual-section--misc-info > article {
+        grid-template-columns: auto;
+    }
+
+    .visual-section--misc-info img {
+        width: clamp(140px, 30%, 400px);
+        justify-self: center;
+    }
+}

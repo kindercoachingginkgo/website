@@ -1,5 +1,5 @@
 /* Raleway, sans-serif */
-@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,700;1,500&display=swap") all;
+/* @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,700;1,500&display=swap") all; */
 
 :root {
   /* Colors */
@@ -23,7 +23,8 @@
   --fnt_weight_medium: 500;
   --fnt_weight_bold: 700;
 
-  font-size: 1px; /* For scaling text */
+  font-size: 1px;
+  /* For scaling text */
   --fnt_size_paragraph_text: 18rem;
   --fnt_size_paragraph_special: 20rem;
   --fnt_size_navbar: 22rem;
@@ -64,10 +65,14 @@ body {
   background-color: var(--clr_white);
 }
 
-body > * {
+body>* {
   margin-inline: auto;
   width: 100%;
   max-width: 1180px;
+}
+
+svg {
+  display: block;
 }
 
 /* text related */
@@ -90,7 +95,7 @@ article h2 {
 }
 
 article :is(h3, a:not(.inline-link)),
-section:first-child > article > p {
+section:first-child>article>p {
   font-size: var(--fnt_size_paragraph_special);
   max-width: 60ch;
 }
@@ -116,33 +121,28 @@ q.inline-quote {
 }
 
 /* GENERAL SPACING */
-section {
+.visual-section {
   padding-block: var(--spc_large);
 }
 
-section.blue-bar:not(.normal-spacing) {
+.visual-section--blue:not(.visual-section--normal-spacing) {
   padding-block: var(--spc_small);
 }
 
-section.blue-bar:not(.normal-spacing) :is(h2, p, ul) {
+.visual-section--blue :is(h2, p, ul) {
   margin-block: var(--spc_small);
 }
 
-:is(h1, h2, p, q, ul):not(:last-child) {
+:where(h1, h2, p, q, ul):not(:last-child) {
   margin-block-end: var(--spc_regular);
 }
-/* 
-h1, h2, p:not(:last-child), q {
-  margin-block-end: var(--spc_regular);
-} */
 
 h3 {
   margin-block-end: var(--spc_smallest);
 }
 
 .button {
-  margin-block-start: calc(var(--spc_regular) * 1.2);
-  margin-block-end: calc(var(--spc_regular) * 1.5);
+  margin-block: var(--spc_small);
 }
 
 #boxed-container {
@@ -154,7 +154,7 @@ h3 {
 }
 
 /* header * */
-header > article {
+header>article {
   position: relative;
   border-block-end: var(--spc_regular_border) solid var(--clr_black);
   padding-block: var(--spc_small);
@@ -176,15 +176,17 @@ aside {
 
 nav {
   position: sticky;
-  top: var(--spc_large); /* to force it to stick with a minimum spacing when scrolling */
-  z-index: 1; /* To render above full bleed .blue-bar elements */
+  top: var(--spc_large);
+  /* to force it to stick with a minimum spacing when scrolling */
+  z-index: 1;
+  /* To render above full bleed .visual-section--blue elements */
   border: var(--spc_small_border) solid var(--clr_black);
   border-radius: var(--spc_small);
   box-shadow: var(--shd_regular);
   background-color: var(--clr_extra_white);
 }
 
-nav > ul {
+nav>ul {
   list-style-type: none;
 }
 
@@ -204,7 +206,8 @@ nav li {
 
 nav a {
   font-weight: var(--fnt_weight_medium);
-  text-decoration: none; /* if browser does not support transparent underline; */
+  text-decoration: none;
+  /* if browser does not support transparent underline; */
   text-decoration: underline solid rgba(0, 0, 0, 0);
   color: var(--clr_black);
   transition: 500ms;
@@ -249,26 +252,25 @@ nav a:hover {
   inset: -3.5px;
 }
 
-.button[href="/HTML/werkwijze.html"] {
-  margin-block-end: 0; /* to hard-fix margins not collapsing because of display: inline-block; */
+.button--yellow {
   background-color: var(--clr_yellow);
   color: var(--clr_black);
 }
 
-.button[href="/HTML/contact.html"] {
-  text-align: center;
+.button--red {
   background-color: var(--clr_red);
   color: var(--clr_extra_white);
 }
 
+
 /*blue bar */
-.blue-bar {
+.visual-section--blue {
   position: relative;
   isolation: isolate;
   background-color: var(--clr_blue);
 }
 
-.blue-bar::before,
+.visual-section--blue::before,
 footer::before {
   content: "";
   display: block;
@@ -281,20 +283,20 @@ footer::before {
   background-color: var(--clr_blue);
 }
 
-.blue-bar::before {
+.visual-section--blue::before {
   box-shadow: var(--shd_large);
 }
 
-.blue-bar:nth-child(4n)::before {
+.visual-section--blue:nth-child(4n)::before {
   box-shadow: inset 0 0 10px -4px black;
 }
 
-.blue-bar > article {
+.visual-section--blue>article {
   display: flex;
   gap: var(--spc_small);
 }
 
-.blue-bar :is(h2, p, ul, q) {
+.visual-section--blue :is(h2, p, ul, q) {
   color: var(--clr_extra_white);
 }
 
@@ -309,7 +311,7 @@ footer::before {
   outline: var(--spc_regular_border) solid var(--clr_black);
 }
 
-footer > article {
+footer>article {
   display: flex;
   flex-direction: row;
   margin-inline: auto;
@@ -318,40 +320,41 @@ footer > article {
   gap: var(--spc_regular);
 }
 
-footer > article :first-child {
-  flex-shrink: 0; /* Text at the left maintains it's size; */
+footer>article :first-child {
+  flex-shrink: 0;
+  /* Text at the left maintains it's size; */
   word-break: break-word;
 }
 
-footer > article * {
+footer>article * {
   color: var(--clr_extra_white);
   min-width: 0;
 }
 
-footer > article a > img {
+footer>article a>img {
   height: 100%;
   max-height: 132px;
 }
 
-footer > article ul {
+footer>article ul {
   list-style-type: none;
 }
 
-footer > article li {
+footer>article li {
   margin-block: calc(var(--spc_smallest) / 2);
 }
 
-footer > article ul > li > a:hover {
+footer>article ul>li>a:hover {
   color: var(--clr_yellow);
 }
 
-footer > article ul > li > a::after {
+footer>article ul>li>a::after {
   content: ">";
   display: inline-block;
   margin-inline-start: 1ch;
 }
 
-footer > article ul > li > a:hover::after {
+footer>article ul>li>a:hover::after {
   transform: scale(1.5);
 }
 
@@ -359,35 +362,36 @@ footer > article ul > li > a:hover::after {
 
 /* Enlarge font-size for for large screen */
 @media screen and (max-width: 1150px) {
+
   /* footer */
-  footer > article {
+  footer>article {
     display: grid;
     gap: var(--spc_small);
   }
 
-  footer > article a > img {
+  footer>article a>img {
     width: auto;
   }
 
-  footer > article a[href="https://www.scag.nl/"] {
+  footer>article a[href="https://www.scag.nl/"] {
     grid-column: 2;
     grid-row: 1;
   }
 
-  footer > article a[href="https://www.scag.nl/"] > img {
+  footer>article a[href="https://www.scag.nl/"]>img {
     display: block;
     margin-inline-start: auto;
   }
 
-  footer > article a[href="https://tekentaal.nl/"] {
+  footer>article a[href="https://tekentaal.nl/"] {
     grid-column: 2;
   }
 
-  footer > article a[href="#"] {
+  footer>article a[href="#"] {
     grid-row: 2;
   }
 
-  footer > article a[href="https://www.landvanrouw.nl/begeleiding/verwijsbestand-land-van-rouw/"] > img {
+  footer>article a[href="https://www.landvanrouw.nl/begeleiding/verwijsbestand-land-van-rouw/"]>img {
     max-width: 290px;
   }
 }
@@ -416,7 +420,7 @@ footer > article ul > li > a:hover::after {
     background: var(--clr_white);
   }
 
-  header > article {
+  header>article {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -435,9 +439,9 @@ footer > article ul > li > a:hover::after {
     z-index: -1;
   }
 
-    header > article > img {
-      height: 75px;
-    }
+  header>article>img {
+    height: 75px;
+  }
 
   /* navbar */
   .burger {
@@ -445,14 +449,15 @@ footer > article ul > li > a:hover::after {
     padding: 15px;
     margin: -15px;
     z-index: 2;
-    border-radius: 10px;;
+    border-radius: 10px;
+    ;
   }
 
   .burger:hover {
     background: var(--clr_extra_white);
   }
 
-  .burger > .line {
+  .burger>.line {
     width: 100%;
     height: 2px;
     margin: 10px 0;
@@ -483,7 +488,7 @@ footer > article ul > li > a:hover::after {
     padding-inline: var(--spc_regular);
   }
 
-  nav > ul > li {
+  nav>ul>li {
     padding-block-start: var(--spc_small);
   }
 
@@ -501,26 +506,26 @@ footer > article ul > li > a:hover::after {
   }
 
   /* footer */
-  footer > article {
+  footer>article {
     grid-template-columns: 1fr;
   }
 
-  footer > article * {
+  footer>article * {
     margin-inline: auto;
     grid-column: 1 !important;
     grid-row: auto / auto !important;
   }
 
-  footer > article > a[href="#"] {
+  footer>article>a[href="#"] {
     grid-row: 2 !important;
-  } 
+  }
 
-  footer > article a > img {
+  footer>article a>img {
     max-width: 290px;
     width: 100%;
   }
 
-  footer > article a[href="https://www.scag.nl/"] {
+  footer>article a[href="https://www.scag.nl/"] {
     grid-row: 5 !important;
   }
 }

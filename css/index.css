@@ -43,7 +43,7 @@
     height: 100%;
     box-sizing: border-box;
     background-color: var(--clr_extra_white);
-    background-image: url("/resources/weegschaal.svg");
+    background-image: url("/images/weegschaal.svg");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -84,8 +84,16 @@
     box-shadow: var(--shd_regular);
 } 
 
-img[src="/resources/headshot.png"] {
+.headshot-image {
     width: 120px;
+}
+
+/*
+    Experiences
+    -----------
+*/
+.experiences {
+    padding-block: var(--spc_largest) var(--spc_large);
 }
 
 @media screen and (max-width: 1150px) {
@@ -120,7 +128,7 @@ img[src="/resources/headshot.png"] {
         height: 150px;
     }
 
-    img[src="/resources/weegschaal.svg"] {
+    .weegschaal {
         height: 80px;
     }
 

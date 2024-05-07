@@ -1,0 +1,143 @@
+/*
+    -----------
+    Experiences
+    -----------
+*/
+.exp__content {
+    --experiences__gap: var(--spc_regular);
+    overflow-x: auto;
+    contain: inline-size;
+    /* padding-right: var(--spc_small); */
+    display: flex;
+    position: relative; /* Needed for js (.offsetLeft) */
+    flex-wrap: nowrap;
+    gap: var(--experiences__gap);
+    align-items: flex-start;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.exp__content::-webkit-scrollbar {
+    display: none;
+}
+
+/*
+    Singular Experience
+    -------------------
+*/
+
+.experience {
+    --experience-width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spc_small);
+    cursor: pointer;
+    flex: 1 0 calc(var(--experience-width) - (var(--experiences__gap) / 2));
+}
+
+.experience > * {
+    margin: 0;
+}
+
+.experience__title {
+    font-style: italic;
+}
+
+.experience__content {
+    --max-line-count: 5;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-style: italic;
+    font-size: var(--fnt_size_paragraph_special);
+    -webkit-line-clamp: var(--max-line-count);
+    line-clamp: var(--max-line-count);
+    transition: font-weight 150ms ease-in-out;
+}
+
+.experience:hover .experience__content {
+    font-weight: 425;
+}
+
+.experience--expanded .experience__content {
+    --max-line-count: 12;
+}
+
+.experience__content::before {
+    content: "\201C";
+}
+
+.experience__content::after {
+    content: "\201D";
+}
+
+.experience__author {
+    font-size: var(--fnt_size_paragraph_special);
+}
+
+.experience__author::before {
+    content: '~ ';
+}
+
+/*
+    Controller
+    ----------
+*/
+.exp__controller {
+    --button-padding: 4px;
+    margin-top: var(--spc_regular);
+    padding-inline: calc(var(--spc_small) - var(--button-padding));
+    display: flex;
+    gap: calc(var(--spc_small) - var(--button-padding));
+    --color: #D2BEB6;
+}
+
+.exp__controller button {
+    padding: var(--button-padding);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.exp__controller__relative > svg {
+    aspect-ratio: 1 / 2;
+    width: 12px;
+    stroke: var(--color);
+    stroke-width: 2.5px;
+    fill: none;
+}
+
+.exp__controller__absolute {
+    --gap: 8px;
+    display: flex;
+    gap: calc(var(--gap) - var(--button-padding));
+}
+
+.exp__controller__absolute__page > svg {
+    aspect-ratio: 1;
+    width: 16px;
+    stroke: var(--color);
+    stroke-width: 3px;
+    fill: none;
+    transition: fill 300ms ease-in-out;
+}
+
+.exp__controller__absolute__page:hover > svg {
+    fill: var(--color);
+    fill-opacity: 0.5;
+}
+
+.exp__controller__absolute__page--selected > svg {
+    fill: var(--color);
+}
+
+/*
+    Responsiveness
+    --------------
+*/
+@media screen and (max-width: 600px) {
+    .experience {
+        flex: 1 0 100%;
+    }
+}
